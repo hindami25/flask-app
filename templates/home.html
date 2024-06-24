@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Welcome to Home Page</h2>
+    <p>Ini adalah deskripsi tentang halaman home.</p>
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Nilai</th>
+        </tr>
+        {% for grade in grades %}
+        <tr>
+            <td>{{ grade[0] }}</td>
+            <td>{{ grade[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('detail') }}">Detail Page</a>
+    <br><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
